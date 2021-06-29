@@ -1,0 +1,22 @@
+How to Use MongoDB in UE4
+
+Download Boost, https://github.com/mongodb/mongo-c-driver/ https://github.com/mongodb/mongo-cxx-driver/  first
+
+cd mongo-c-driver-1.17.6
+mkdir cmake_build
+cd cmake_build
+cmake .. -G "Visual Studio 16 2019"  "-DCMAKE_BUILD_TYPE=Release" "-DBUILD_SHARED_AND_STATIC_LIBS=ON" "-DCMAKE_INSTALL_PREFIX=C:\mongo-c-driver" "-DCMAKE_PREFIX_PATH=C:\mongo-c-driver"
+
+cmake --build . --config RelWithDebInfo
+cmake --build . --config RelWithDebInfo --target install
+
+
+
+cd mongo-cxx-driver-r3.6.5
+mkdir cmake_build
+cd cmake_build
+
+cmake .. -G "Visual Studio 16 2019"  "-DCMAKE_BUILD_TYPE=Release" "-DBUILD_SHARED_AND_STATIC_LIBS=ON" "-DCMAKE_INSTALL_PREFIX=C:\mongo-cxx-driver" "-DCMAKE_PREFIX_PATH=C:\mongo-c-driver" "-DBOOST_ROOT=C:\local\boost_1_76_0"
+
+cmake --build . --config RelWithDebInfo
+cmake --build . --config RelWithDebInfo --target install
